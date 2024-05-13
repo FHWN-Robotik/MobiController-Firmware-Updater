@@ -96,6 +96,7 @@ def main():
         return
 
     print("Please boot the controller into DFU mode.\n To do so, hold the 'USER_BTN' button and press the 'RESET' button.")
+    input("Press [enter] when the controller is in DFU mode.")
 
     if not args.binary:
         firmware_bin_path = download_current_firmware()
