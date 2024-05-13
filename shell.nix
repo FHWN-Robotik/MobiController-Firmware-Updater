@@ -4,7 +4,6 @@ let
   pythonEnv = pkgs.python3.withPackages
     (p: with p; [
       requests
-      packaging
       tqdm
     ]);
 
@@ -14,5 +13,6 @@ pkgs.mkShell
   nativeBuildInputs = with pkgs; [
     pythonEnv
     dfu-util
+    pipreqs
   ];
 }
