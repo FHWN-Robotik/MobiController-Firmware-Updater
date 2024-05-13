@@ -95,6 +95,8 @@ def main():
         bye()
         return
 
+    print("Please boot the controller into DFU mode.\n To do so, hold the 'USER_BTN' button and press the 'RESET' button.")
+
     if not args.binary:
         firmware_bin_path = download_current_firmware()
 
@@ -105,7 +107,7 @@ def main():
 
     # dfu-util -a 0 -D ./micro_ros_firmware.bin -s 0x08000000:leave
     subprocess.run(
-        ["dfu-util", "-a", "0", "-w", "-D", firmware_bin_path, "-s", "0x08000000:leave"]
+        ["dfu-util", "-a", "0", "-D", firmware_bin_path, "-s", "0x08000000:leave"]
     )
     bye()
 
